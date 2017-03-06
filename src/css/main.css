@@ -1,0 +1,29 @@
+.Feedback {
+  background-color: #3f51b5;
+  height: 100%;
+}
+
+.Feedback .mdc-layout__content {
+}
+
+.Feedback .mdc-layout__content .Register {
+  display: flex;
+  margin: auto;
+  width: auto;
+  /*color: #fff;*/
+  width: 400px;
+  background-color: #fff;
+}
+
+.Feedback .mdc-layout__content .Register .mdc-card__primary .mdc-card__title {
+  /*color: #fff;*/
+}
+
+.Feedback .mdc-layout__content .Register .mdc-card__supporting-text .mdc-textfield__label {
+  bottom: 0;
+}
+
+.Feedback .mdc-layout__content .Register .mdc-card__supporting-text .mdc-textfield__input:-webkit-autofill +
+.mdc-textfield__label {
+  bottom: 12px;
+}

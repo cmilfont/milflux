@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-class Store extends Component {
+class Store extends React.Component {
 
   static childContextTypes = {
     data: PropTypes.object,

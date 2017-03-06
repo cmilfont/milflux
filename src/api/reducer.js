@@ -9,7 +9,8 @@ const initialState = {
     uid: '',
     password: '',
   }),
-  errors: []
+  errors: [],
+  navigation: 'register',
 };
 
 const reducer = (state = initialState, action) => {
@@ -24,10 +25,26 @@ const reducer = (state = initialState, action) => {
       }
     }
 
+    if (type === 'doLoginSuccess' || type === 'doRegisterSuccess') {
+      return {
+        navigation: 'login',
+        errors: [],
+        user: state.user.merge(payload),
+      }
+    }
+
     if (type === 'onSubmitFailure') {
       return {
         ...state,
         errors: [payload],
+      }
+    }
+
+    if (type === 'onNavigate') {
+      console.log(type, payload);
+      return {
+        ...state,
+        navigation: payload,
       }
     }
 

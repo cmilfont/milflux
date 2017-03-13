@@ -12,10 +12,7 @@ const filter = store => (
           console.log('user', payload);
           store.dispatch({ type: 'doLoginSuccess', payload });
         })
-        .catch(function(error) {
-          const { code, message } = error;
-          console.log(code, message);
-      });
+        .catch(payload => (store.dispatch({ type: 'onSubmitFailure', payload })));
     }
 
     if (action.type === 'doRegister') {
@@ -27,9 +24,7 @@ const filter = store => (
         .then(payload => {
           store.dispatch({ type: 'doRegisterSuccess', payload });
         })
-        .catch(payload => {
-          store.dispatch({ type: 'onSubmitFailure', payload })
-        });
+        .catch(payload => (store.dispatch({ type: 'onSubmitFailure', payload })));
     }
 
     return reducer(state, action);

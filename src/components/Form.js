@@ -14,7 +14,7 @@ class form extends React.Component {
   render() {
     const { onSubmit, onChange, user, errors, buttonLabel, children, label } = this.props;
     const errorContainer = errors.map(({ code, message }) => (
-      <div key={`error-${code}`}>{code} - {message}</div>
+      <p key={`error-${code}`}>{code} - {message}</p>
     ));
     const containerChild = (children) ? children : '';
 
@@ -38,7 +38,6 @@ class form extends React.Component {
             <p className="mdc-textfield-helptext mdc-textfield-helptext--persistent mdc-textfield-helptext--validation-msg" />
           </form>
         </section>
-        <section className="mdc-card__supporting-text">{containerChild}</section>
         <section className="mdc-card__actions">
           <button
             onClick={onSubmit}
@@ -46,6 +45,7 @@ class form extends React.Component {
           >
             {buttonLabel}
           </button>
+          {containerChild}
         </section>
       </div>
     );

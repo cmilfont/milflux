@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 class Wrapper extends Component {
+
   static contextTypes = {
     data: PropTypes.object,
     dispatch: PropTypes.func,

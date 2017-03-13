@@ -22,6 +22,13 @@ class Login extends React.Component {
     dispatch({ type: 'onChange', payload: { name, value } })
   }
 
+  onClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const { dispatch } = this.props;
+    dispatch({ type: 'onNavigate', payload: 'register' })
+  }
+
   render() {
     const { user, errors } = this.props;
     return (
@@ -32,7 +39,11 @@ class Login extends React.Component {
         errors={errors}
         label="Login"
         buttonLabel="Entrar"
-      />
+      >
+        <div className="navigation">
+          <a href="/register" onClick={this.onClick}>Register</a>
+        </div>
+      </FormFlux>
     );
   }
 }

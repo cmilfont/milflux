@@ -1,12 +1,11 @@
 import firebase from 'firebase';
 
-/* TODO: troque pelos seus dados */
 const config = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  storageBucket: "",
-  messagingSenderId: ""
+  apiKey: "AIzaSyDGYMxpnYaAJYyquEUM6Y__yQjhPP_skx0",
+  authDomain: "feedback-140018.firebaseapp.com",
+  databaseURL: "https://feedback-140018.firebaseio.com",
+  storageBucket: "feedback-140018.appspot.com",
+  messagingSenderId: "71457068040"
 };
 firebase.initializeApp(config);
 window.firebase = firebase;
